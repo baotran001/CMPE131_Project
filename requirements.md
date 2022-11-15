@@ -2,12 +2,12 @@
 
 ## Functional Requirements
 
-1. requirement
-2. requirement
-3. requirement
-4. requirement
-5. requirement
-6. requirement
+1. Login
+2. Logout
+3. Create new account
+4. delete account
+5. User home page (user can see messages of users they follow)
+6. Send message to followers
 7. requirement
 8. requirement
 9. requirement
@@ -24,7 +24,52 @@
 
 ## Use Cases
 
-1. Use Case Name (Should match functional requirement name)
+1. Login 
+- **Pre-condition:** 
+  1. User must have an account
+  2. User must provide correct information
+
+- **Trigger:** 
+  User clicked on "login" button.
+
+- **Primary Sequence:**
+  
+  1. System prompt user for username and password
+  2. User types in username and password
+  3. User clicks "login"
+  4. System checks for user's infomation
+  5. System logs user in
+  6. System redirects user to homepage
+
+- **Primary Postconditions:** 
+  1. User is logged in
+
+- **Alternate Sequence:** 
+  
+  1. User enters invalid information
+  2. User clicks "login"
+  3. System displays "Incorrect username or password"
+  4. System prompts user to enter username and password again
+
+2. Logout
+- **Pre-condition:** 
+  1. User must be logged in
+
+- **Trigger:** 
+  User clicked on "logout" button
+
+- **Primary Sequence:**
+  
+  1. User clicks on logout button
+  2. System logs user out
+  3. System redirects user to login page
+  
+
+- **Primary Postconditions:** <can be a list or short description> 
+  The user is logged out of their account
+
+
+3. Use Case Name (Should match functional requirement name)
 - **Pre-condition:** <can be a list or short description> Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
 
 - **Trigger:** <can be a list or short description> Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. 
@@ -55,5 +100,101 @@
   1. Ut enim ad minim veniam, quis nostrum e
   2. Ut enim ad minim veniam, quis nostrum e
   3. ...
-2. Use Case Name (Should match functional requirement name)
-   ...
+
+4. Use Case Name (Should match functional requirement name)
+- **Pre-condition:** <can be a list or short description> Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+
+- **Trigger:** <can be a list or short description> Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. 
+
+- **Primary Sequence:**
+  
+  1. Ut enim ad minim veniam, quis nostrum e
+  2. Et sequi incidunt 
+  3. Quis aute iure reprehenderit
+  4. ... 
+  5. ...
+  6. ...
+  7. ...
+  8. ...
+  9. ...
+  10. <Try to stick to a max of 10 steps>
+
+- **Primary Postconditions:** <can be a list or short description> 
+
+- **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
+  
+  1. Ut enim ad minim veniam, quis nostrum e
+  2. Ut enim ad minim veniam, quis nostrum e
+  3. ...
+
+- **Alternate Sequence <optional>:** <you can have more than one alternate sequence to describe multiple issues that may arise>
+  
+  1. Ut enim ad minim veniam, quis nostrum e
+  2. Ut enim ad minim veniam, quis nostrum e
+  3. ...
+
+5. Use Case Name (Should match functional requirement name)
+- **Pre-condition:** <can be a list or short description> Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+
+- **Trigger:** <can be a list or short description> Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. 
+
+- **Primary Sequence:**
+  
+  1. Ut enim ad minim veniam, quis nostrum e
+  2. Et sequi incidunt 
+  3. Quis aute iure reprehenderit
+  4. ... 
+  5. ...
+  6. ...
+  7. ...
+  8. ...
+  9. ...
+  10. <Try to stick to a max of 10 steps>
+
+- **Primary Postconditions:** <can be a list or short description> 
+
+- **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
+  
+  1. Ut enim ad minim veniam, quis nostrum e
+  2. Ut enim ad minim veniam, quis nostrum e
+  3. ...
+
+- **Alternate Sequence <optional>:** <you can have more than one alternate sequence to describe multiple issues that may arise>
+  
+  1. Ut enim ad minim veniam, quis nostrum e
+  2. Ut enim ad minim veniam, quis nostrum e
+  3. ...
+
+6. Use Case Name (Should match functional requirement name)
+- **Pre-condition:** <can be a list or short description> Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+
+- **Trigger:** <can be a list or short description> Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. 
+
+- **Primary Sequence:**
+  
+  1. Ut enim ad minim veniam, quis nostrum e
+  2. Et sequi incidunt 
+  3. Quis aute iure reprehenderit
+  4. ... 
+  5. ...
+  6. ...
+  7. ...
+  8. ...
+  9. ...
+  10. <Try to stick to a max of 10 steps>
+
+- **Primary Postconditions:** <can be a list or short description> 
+
+- **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
+  
+  1. Ut enim ad minim veniam, quis nostrum e
+  2. Ut enim ad minim veniam, quis nostrum e
+  3. ...
+
+- **Alternate Sequence <optional>:** <you can have more than one alternate sequence to describe multiple issues that may arise>
+  
+  1. Ut enim ad minim veniam, quis nostrum e
+  2. Ut enim ad minim veniam, quis nostrum e
+  3. ...
+
+
