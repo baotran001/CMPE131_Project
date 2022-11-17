@@ -8,7 +8,7 @@
 4. delete account
 5. User home page (user can see messages of users they follow)
 6. Send message to followers
-7. requirement
+7. View followers
 8. requirement
 9. requirement
 10. requirement
@@ -24,49 +24,41 @@
 
 ## Use Cases
 
-1. Login 
+1. Send message to followers
 - **Pre-condition:** 
-  1. User must have an account
-  2. User must provide correct information
+  1. User must have written a message 
+  2. User must be logged in
 
 - **Trigger:** 
-  User clicked on "login" button.
+  User clicked on "post" button.
 
 - **Primary Sequence:**
   
-  1. System prompt user for username and password
-  2. User types in username and password
-  3. User clicks "login"
-  4. System checks for user's infomation
-  5. System logs user in
-  6. System redirects user to homepage
+  1. System prompt user for message
+  2. User types message
+  3. User clicks "post"
+  4. System posts message
+  5. System refreshes home page
 
 - **Primary Postconditions:** 
-  1. User is logged in
+  1. User's message is posted
 
-- **Alternate Sequence:** 
-  
-  1. User enters invalid information
-  2. User clicks "login"
-  3. System displays "Incorrect username or password"
-  4. System prompts user to enter username and password again
-
-2. Logout
+2. View followers
 - **Pre-condition:** 
   1. User must be logged in
+  2. User must be on profile page
 
 - **Trigger:** 
-  User clicked on "logout" button
+  User clicked on "followers" button
 
 - **Primary Sequence:**
   
-  1. User clicks on logout button
-  2. System logs user out
-  3. System redirects user to login page
+  1. User clicks on followers button
+  2. System redirect user to follower page
   
 
 - **Primary Postconditions:** <can be a list or short description> 
-  The user is logged out of their account
+  The user's follower are shown.
 
 
 3. Use Case Name (Should match functional requirement name)
