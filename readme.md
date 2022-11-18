@@ -1,5 +1,5 @@
 # Project Name
 - Baotran Nguyen (@baotran001)
-- Name (@username)
+- Cathleen Espinoza (@cathleenespinoza)
 - Name (@username)
 - Name (@username)
