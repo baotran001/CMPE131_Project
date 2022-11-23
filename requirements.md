@@ -11,16 +11,16 @@
 7. View followers
 8. Follow User
 9. Search for User
-10. requirement
-11. requirement
-12. requirement
+10. User Profile
+11. Sending private messages
+12. Post an image with message
 
 ## Non-functional Requirements
 
-1. non-functional
-2. non-functional
-3. non-functional
-4. non-functional
+1. Only Support Google Chrome
+2. Only provide English as a language option
+3. Light and Dark Theme option
+4. Options for different fonts
 
 ## Use Cases
 
@@ -100,37 +100,29 @@
   1. The system cannot find any possible user profiles.
 	a. The system displays "no users found".
 
-5. Use Case Name (Should match functional requirement name)
-- **Pre-condition:** <can be a list or short description> Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+5. Send private message
+- **Pre-condition:** 
+  1. Must be logged in.
+  2. Must be on a user's profile page.
 
-- **Trigger:** <can be a list or short description> Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. 
+- **Trigger:**  
+  User clicks on "Message" button on the intended user's profile.	
 
 - **Primary Sequence:**
-  
-  1. Ut enim ad minim veniam, quis nostrum e
-  2. Et sequi incidunt 
-  3. Quis aute iure reprehenderit
-  4. ... 
-  5. ...
-  6. ...
-  7. ...
-  8. ...
-  9. ...
-  10. <Try to stick to a max of 10 steps>
+  1. User click on another user's profile.
+  2. System displays profile which has "Message" button.
+  3. User clicks on "Message" button.
+  4. System displays chat log between the two users and a text bar at the bottom.
+  5. User types in the text bar and presses enter to send message.
+  6. System displays the new message on the chat log for both users.
 
-- **Primary Postconditions:** <can be a list or short description> 
+- **Primary Postconditions:** 
+  The chat log for both users has been updated with the new message.
 
-- **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
-  
-  1. Ut enim ad minim veniam, quis nostrum e
-  2. Ut enim ad minim veniam, quis nostrum e
-  3. ...
-
-- **Alternate Sequence <optional>:** <you can have more than one alternate sequence to describe multiple issues that may arise>
-  
-  1. Ut enim ad minim veniam, quis nostrum e
-  2. Ut enim ad minim veniam, quis nostrum e
-  3. ...
+- **Alternate Sequence:**
+  1. User is not logged on.
+  2. User clicks "Message" button.
+  3. Displays page to log in or create an account.
 
 6. Use Case Name (Should match functional requirement name)
 - **Pre-condition:** <can be a list or short description> Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
