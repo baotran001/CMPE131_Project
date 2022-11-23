@@ -7,12 +7,12 @@
 3. Create new account
 4. delete account
 5. User home page (user can see messages of users they follow)
-6. Send message to followers
-7. View followers
-8. Follow User
+6. Send message to followers 
+7. View followers (Baotran)
+8. Follow User 
 9. Search for User
-10. User Profile
-11. Sending private messages
+10. User Profile (Baotran)
+11. Sending private messages (Baotran)
 12. Post an image with message
 
 ## Non-functional Requirements
@@ -24,7 +24,7 @@
 
 ## Use Cases
 
-1. Send message to followers
+1. Send message to followers (Baotran)
 - **Pre-condition:** 
   1. User must have written a message 
   2. User must be logged in
@@ -43,7 +43,7 @@
 - **Primary Postconditions:** 
   1. User's message is posted
 
-2. View followers
+2. View followers (Baotran)
 - **Pre-condition:** 
   1. User must be logged in
   2. User must be on profile page
