@@ -1,6 +1,6 @@
 ## Meetings
 
-### 2022-11-15 at 13:30
+### 2022-11-15 at 10:30
 - Who attended the meeting
   - Hieu
   - Cathleen
@@ -16,7 +16,7 @@
 - Group project summary 
   A github repository was made and branches were pushed up.
 
-### 2022-11-17 at 13:30
+### 2022-11-17 at 10:30
 - Who attended the meeting
   - Hieu
   - Cathleen
