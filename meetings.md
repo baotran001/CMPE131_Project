@@ -7,7 +7,7 @@
   - Baotran Nguyen
 
 - Team updates
-  - Hieu <work completed and next task>
+  - Hieu working on use case send private message
   - Cathleen created a branch and will work on 2 use cases next.
   - Kolby joined the repository
   - Baotran made a repository and will work on 2 use cases next.
@@ -23,7 +23,7 @@
   - Baotran Nguyen
 
 - Team updates
-  - Hieu <work completed and next task>
+  - Hieu working on use case send private message
   - Cathleen completed 2 use cases and will work on her assigned functional requirements.
   - Kolby configured github to work with IDE and will begin work on functional requirement.
   - Baotran completed 2 use cases and will work on her assigned functional requirements.
@@ -39,7 +39,7 @@
   - Baotran Nguyen
 
 - Team updates
-  - Hieu <work completed and next task>
+  - Hieu completed use case "send private message" and non functional requirements.
   - Cathleen brainstormed ideas for nonfunctional requirements and will continue to work on functional requirements.
   - Kolby helped brainstorm nonfunctional requirements and will continue work on functional requirement.
   - Baotran worked on and will continue working on functional requirements. 
