@@ -124,36 +124,31 @@
   2. User clicks "Message" button.
   3. Displays page to log in or create an account.
 
-6. Use Case Name (Should match functional requirement name)
-- **Pre-condition:** <can be a list or short description> Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+6.  Post an Image with Message (Kolby / sZeru)
+- **Pre-condition:**
+  1. Must be logged in.
 
-- **Trigger:** <can be a list or short description> Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. 
+- **Trigger:** 
+  1. User must click an image button on the message field.
 
 - **Primary Sequence:**
-  
-  1. Ut enim ad minim veniam, quis nostrum e
-  2. Et sequi incidunt 
-  3. Quis aute iure reprehenderit
-  4. ... 
-  5. ...
-  6. ...
-  7. ...
-  8. ...
-  9. ...
-  10. <Try to stick to a max of 10 steps>
+  1. A popup appears, asking the user to provide the path to the image on their computer.
+  2. User enters a valid path.
+  3. User presses 'add'. The image is appended to the buttom of their message field.
+  4. The user types a message and presses 'post'.
+  5. System posts message.
 
-- **Primary Postconditions:** <can be a list or short description> 
+- **Primary Postconditions:**
+  1. The image and message are posted.
 
-- **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
-  
-  1. Ut enim ad minim veniam, quis nostrum e
-  2. Ut enim ad minim veniam, quis nostrum e
-  3. ...
+- **Alternate Sequence:**
+  1. User does not select a valid path, and presses 'add'.
+  2. The path entry field is set to a red border. A prompt in red font displays "Invalid Path."
+  3. The user can edit the path provided.
 
-- **Alternate Sequence <optional>:** <you can have more than one alternate sequence to describe multiple issues that may arise>
-  
-  1. Ut enim ad minim veniam, quis nostrum e
-  2. Ut enim ad minim veniam, quis nostrum e
-  3. ...
+- **Alternate Sequence <optional>:** 
+  1. User selects a valid path to an image that is too large.
+  2. The path entry field is set to a red border. A prompt in red font displays "The image is too large."
+  3. The user can edit the path provided.
 
 
