@@ -1,16 +1,15 @@
-## <remove all of the example text and notes in < > such as this one>
 
 ## Functional Requirements
 
-1. Login
+1. Login (Cathleen)
 2. Logout
 3. Create new account
 4. delete account
 5. User home page (user can see messages of users they follow)
 6. Send message to followers 
 7. View followers (Baotran)
-8. Follow User 
-9. Search for User
+8. Follow User (Cathleen)
+9. Search for User (Cathleen)
 10. User Profile (Baotran)
 11. Sending private messages (Baotran)
 12. Post an image with message
@@ -59,7 +58,7 @@
 - **Primary Postconditions:**
   The user's follower are shown.
 
-3. Follow User
+3. Follow User (Cathleen)
 - **Pre-condition:**
   1. User is logged in.
 
@@ -80,7 +79,7 @@
   1. The user is not logged in.
 	a. When the user tries to follow the intended user, the system displays a message that gives the option to log in, or create a new account.
 
-4. Search for User
+4. Search for User (Cathleen)
 - **Pre-condition:**
   1. User has website open.
 

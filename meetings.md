@@ -8,9 +8,9 @@
 
 - Team updates
   - Hieu <work completed and next task>
-  - Cathleen <work completed and next task>
+  - Cathleen created a branch and will work on 2 use cases next.
   - Kolby <work completed and next task>
-  - Baotran made a repository and will work on 2 use cases next
+  - Baotran made a repository and will work on 2 use cases next.
 
 - Group project summary 
   A github repository was made and branches were pushed up.
@@ -24,9 +24,9 @@
 
 - Team updates
   - Hieu <work completed and next task>
-  - Cathleen <work completed and next task>
+  - Cathleen completed 2 use cases and will work on her assigned functional requirements.
   - Kolby <work completed and next task>
-  - Baotran completed 2 use cases and will work on her assigned functional requirements
+  - Baotran completed 2 use cases and will work on her assigned functional requirements.
 
 - Group project summary 
   Functional and non-functional requirements were added and disscussed. 
@@ -40,7 +40,7 @@
 
 - Team updates
   - Hieu <work completed and next task>
-  - Cathleen <work completed and next task>
+  - Cathleen brainstormed ideas for nonfunctional requirements and will continue to work on functional requirements.
   - Kolby <work completed and next task>
   - Baotran worked on and will continue working on functional requirements. 
 
