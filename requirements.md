@@ -17,7 +17,7 @@
 ## Non-functional Requirements
 
 1. Only Support Google Chrome
-2. Only provide English as a language option
+2. Only support Desktop
 3. Light and Dark Theme option
 4. Options for different fonts
 
