@@ -39,12 +39,13 @@
   5. System refreshes home page (redirects user to the home page again) with new post shown
 
 - **Primary Postconditions:** 
-  1. User's message is posted
+  1. User's message is posted if user entered valid input
 
 - **Alternate Sequence:**
-  1. User enters bad input (e.g., nothing)
+  1. User enters bad input (e.g., nothing, spaces)
   2. User clicks "post"
-  3. System displays message prompting user to enter again
+  3. System does not post message
+  4. System refreshes home page (redirects user to the home page again)
 
 2. View followers (Baotran)
 - **Pre-condition:** 
@@ -60,7 +61,7 @@
   3. System displays list of followers
   
 - **Primary Postconditions:**
-  The user is on the followers page and user's followers are shown else "no followers" is displayed if user does not have followers.
+  1. The user is on the followers page and user's followers are shown else "no followers" is displayed if user does not have followers.
 
 - **Alternate Sequence:**
   1. User does not have followers
