@@ -25,22 +25,27 @@
 
 1. Send message to followers (Baotran)
 - **Pre-condition:** 
-  1. User must have written a message 
-  2. User must be logged in
+  1. User must be logged in
+  2. User must be on the homepage
 
 - **Trigger:** 
   User clicked on "post" button.
 
 - **Primary Sequence:**
-  
   1. System prompt user for message
   2. User types message
   3. User clicks "post"
   4. System posts message
-  5. System refreshes home page
+  5. System refreshes home page (redirects user to the home page again) with new post shown
 
 - **Primary Postconditions:** 
-  1. User's message is posted
+  1. User's message is posted if user entered valid input
+
+- **Alternate Sequence:**
+  1. User enters bad input (e.g., nothing, spaces)
+  2. User clicks "post"
+  3. System does not post message
+  4. System refreshes home page (redirects user to the home page again)
 
 2. View followers (Baotran)
 - **Pre-condition:** 
@@ -51,12 +56,19 @@
   User clicked on "followers" button
 
 - **Primary Sequence:**
-  
   1. User clicks on followers button
   2. System redirect user to follower page
+  3. System displays list of followers
   
 - **Primary Postconditions:**
-  The user's follower are shown.
+  1. The user is on the followers page and user's followers are shown else "no followers" is displayed if user does not have followers.
+
+- **Alternate Sequence:**
+  1. User does not have followers
+  2. User clicks on followers button
+  3. System redirect user to followers page
+  4. System displays "no followers"
+
 
 3. Follow User (Cathleen)
 - **Pre-condition:**
