@@ -90,10 +90,13 @@
 - **Alternate Sequence:**
   1. The user is not logged in.
 	a. When the user tries to follow the intended user, the system displays a message that gives the option to log in, or create a new account.
+  2. The intended user's profile is deleted.
+  a. When the user tries to follow the intended user and that profile is deleted, the user is unable to follow the intended user and the system displays a message that the user does not exist.
 
 4. Search for User (Cathleen)
 - **Pre-condition:**
   1. User has website open.
+  2. User is logged in.
 
 - **Trigger:**
   User enters a username and/or name into the website's search bar.
@@ -108,7 +111,9 @@
   1. System displays a list of possible user profiles from entered username/name.
 
 - **Alternate Sequence:**
-  1. The system cannot find any possible user profiles.
+  1. User is not logged in.
+  a. When the user tries to follow the intended user, the system displays a message that gives the option to log in, or create a new account.
+  2. The system cannot find any possible user profiles.
 	a. The system displays "no users found".
 
 5. Send private message
