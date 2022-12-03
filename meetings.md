@@ -57,7 +57,7 @@
 
 - Team updates
   - Hieu 
-  - Cathleen 
+  - Cathleen worked on and will continue working on 'Follow User' and 'Login'.
   - Kolby 
   - Baotran uploaded template to git repository
 
