@@ -46,4 +46,5 @@ def login():
 
 @myapp_obj.route('/')
 def home():
+    #page you're on when you paste url
     return render_template('base.html')
