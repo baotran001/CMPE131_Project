@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+<head>
+  <title>Register Page</title>
+</head>>
+
+{% block mycontent %}
+<h1>Sign up</h1>
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <p>{{form.username.label}} <br> 
+        {{form.username(size=40)}} <br>
+        {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+    </p>
+    <p>{{form.password.label}} <br>
+         {{form.password(size=40)}}  <br>
+         {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+    </p>
+    <p>{{form.repeatPassword.label}} <br> 
+        {{form.repeatPassword(size=40)}}  <br>
+        {% for error in form.repeatPassword.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+    </p>
+    <p> {{form.submit()}}</p>
+</form>
+{% endblock %}

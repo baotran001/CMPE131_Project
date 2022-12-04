@@ -1,6 +1,7 @@
 from app import myapp_obj
 from flask import render_template, redirect, flash
 from app.forms import LoginForm
+from app.forms import RegisterForm
 from app.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import current_user
@@ -11,6 +12,7 @@ from app.forms import EmptyForm
 
 from app import db
 from flask import url_for
+from flask import request
 
 @myapp_obj.route('/private')
 @login_required
@@ -20,11 +22,18 @@ def private():
 @myapp_obj.route('/logout')
 @login_required
 def logout():
-    load_user(current_user)
-    return redirect('/')
+    if current_user.is_authenticated:
+        logout_user()
+        return redirect(url_for('login'))
+    else:
+        return redirect(url_for('login'))
 
-@myapp_obj.route('/login', methods=['POST', 'GET'])
+@myapp_obj.route('/', methods=['POST', 'GET'])
 def login():
+    #Checks if user is logged in already
+    if current_user.is_authenticated:
+        return redirect(url_for('home', username=current_user.username))
+        
     current_form = LoginForm()
     # taking input from the user and doing somithing with it
     if current_form.validate_on_submit():
@@ -35,23 +44,19 @@ def login():
         if user is None or not user.check_password(current_form.password.data):
             flash('Invalid password!')
             # if passwords don't match, send user to login again
-            return redirect('/login')
+            return redirect('/')
 
         # login user
         login_user(user, remember=current_form.remember_me.data)
         flash('quick way to debug')
         flash('another quick way to debug')
-        print(current_form.username.data, current_form.password.data)
-        return redirect('/')
+        #print(current_form.username.data, current_form.password.data)
+
+        msg = current_form.username.data, current_form.password.data
+        flash(msg)
+        return redirect(url_for('home', username=current_form.username.data))
     login_page_message = 'Sign In'
     return render_template('login.html', login_page_message=login_page_message, form=current_form)
-
-
-@myapp_obj.route('/')
-def home():
-    return render_template('base.html')
-
-
 
 @myapp_obj.route('/user/<username>')
 @login_required
@@ -60,7 +65,7 @@ def user(username):
     form = EmptyForm()
     return render_template('user.html', user=user, posts=posts, form=form)
 
-
+#Cathleen
 @myapp_obj.route('/follow/<username>', methods=['POST'])
 @login_required
 def follow(username):
@@ -80,7 +85,7 @@ def follow(username):
     else:
         return redirect(url_for('base')) # fix url for?
 
-
+#Cathleen
 @myapp_obj.route('/unfollow/<username>', methods=['POST'])
 @login_required
 def unfollow(username):
@@ -99,3 +104,52 @@ def unfollow(username):
         return redirect(url_for('user', username=username))
     else:
         return redirect(url_for('base')) # fix url for?
+
+
+#Baotran
+@myapp_obj.route('/user/<username>/home')
+@login_required
+def home(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    return render_template('home.html', user=user)
+
+#Baotran
+@myapp_obj.route('/user/<username>/userProfile')
+@login_required
+def profile(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    posts = [
+        {'author': user, 'body': 'Test post #1'},
+        {'author': user, 'body': 'Test post #2'}
+    ]
+    return render_template('profile.html', user=user)
+
+#Baotran
+@myapp_obj.route('/register', methods=['POST', 'GET'])
+def register():
+    #checks if user is logged in (true) or no (false)
+    if current_user.is_authenticated:
+        return redirect(url_for('home', current_user.username))
+    current_form = RegisterForm()
+    #checks if data was accepted by all field validators when submitted
+    if current_form.validate_on_submit():
+        user = User(username=current_form.username.data)
+        user.set_password(current_form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('You have successfully registered!')
+        return redirect(url_for('login'))
+    return render_template('register.html', form=current_form)
+
+#Baotran
+@myapp_obj.route('/user/<username>/followers')
+@login_required
+def followers(username):
+    return render_template('followers.html')
+
+#Baotran
+@myapp_obj.route('/user/<username>/message')
+@login_required
+def privateMessage(username):
+    return render_template('message.html')
+
