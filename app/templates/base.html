@@ -6,8 +6,18 @@
 </head>
 
 <body>
-  <div>Microblog: <a href="/index">Home</a></div>
-  {% block mycontent %}{% endblock %}
+  <div>
+    Blog Name
+    {% if current_user.is_anonymous %}
+    {% else %}
+    <a href="{{ url_for('home', username=current_user.username) }}">Home</a>
+    <a href="{{ url_for('profile', username=current_user.username) }}">Profile</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+    {% endif %}
+    <hr>
+    
+  </div>
+  {% block mycontent %} {% endblock %}
   {% with messages = get_flashed_messages() %}
   {% if messages %}
   <ul>
