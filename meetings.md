@@ -59,7 +59,22 @@
   - Hieu 
   - Cathleen worked on and will continue working on 'Follow User' and 'Login'.
   - Kolby 
-  - Baotran uploaded template to git repository
+  - Baotran uploaded template to git repository and will continue working on functional requirement
 
 - Group project summary 
   Finished assigning functional requirements and uploaded template.   
+
+  ### 2022-12-01 at 11:00
+- Who attended the meeting
+  - Hieu
+  - Cathleen
+  - Kolby
+  - Baotran Nguyen
+
+- Team updates
+  - Hieu 
+  - Cathleen 
+  - Kolby 
+  - Baotran fixed my use case and will continue working on code
+- Group project summary 
+  Discussed how to redo use cases based on feedback.
