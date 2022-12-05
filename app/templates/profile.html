@@ -4,7 +4,15 @@
     <title>Profile Page</title>
   </head>>
 
+
 {% block mycontent %}
-  <h1>On profile page</h1>
-  <h2>User: {{ user.username }}</h2>
+<h1 style="font-size: 45px">{{ user.username }}</h1>
+<p>
+  <span style="font-size: 20px">post: </span>
+  <a style="text-decoration:none; color:black" href="{{ url_for('followers', username=user.username )}}"><span style="font-size: 20px">follower: </span></a>
+  <span style="font-size: 20px">following: </span>
+</p>
+<hr>
 {% endblock %}
+
+  
