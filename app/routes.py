@@ -1,14 +1,12 @@
 from app import myapp_obj
 from flask import render_template, redirect, flash
-from app.forms import LoginForm
-from app.forms import RegisterForm
+from app.forms import LoginForm, EmptyForm, HomeForm, RegisterForm, EditForm
 from app.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import current_user
 from flask_login import login_required
 from flask_login import login_user
 from flask_login import logout_user
-from app.forms import EmptyForm
 
 from app import db
 from flask import url_for
@@ -33,7 +31,7 @@ def login():
     #Checks if user is logged in already
     if current_user.is_authenticated:
         return redirect(url_for('home', username=current_user.username))
-        
+
     current_form = LoginForm()
     # taking input from the user and doing somithing with it
     if current_form.validate_on_submit():
@@ -47,6 +45,7 @@ def login():
             return redirect('/')
 
         # login user
+        #REMEMBER ME DOES NOT WORK
         login_user(user, remember=current_form.remember_me.data)
         flash('quick way to debug')
         flash('another quick way to debug')
@@ -107,22 +106,35 @@ def unfollow(username):
 
 
 #Baotran
-@myapp_obj.route('/user/<username>/home')
+@myapp_obj.route('/user/<username>/home', methods=['POST', 'GET'])
 @login_required
 def home(username):
+    current_form = HomeForm()
     user = User.query.filter_by(username=username).first_or_404()
-    return render_template('home.html', user=user)
+    return render_template('home.html', user=user, form=current_form)
 
 #Baotran
-@myapp_obj.route('/user/<username>/userProfile')
+@myapp_obj.route('/user/<username>/setting', methods=['POST', 'GET'])
 @login_required
-def profile(username):
+def edit(username):
     user = User.query.filter_by(username=username).first_or_404()
-    posts = [
-        {'author': user, 'body': 'Test post #1'},
-        {'author': user, 'body': 'Test post #2'}
-    ]
-    return render_template('profile.html', user=user)
+    current_form = EditForm()
+    flash(current_form.validate_on_submit())
+    if current_form.validate_on_submit():
+        if not User.check_password(user,current_form.confirmPassword.data):
+            flash('Invalid password!')
+            return redirect(url_for('setting', username=username))
+        if len(current_form.username.data) != 0 :
+            user.set_username(current_form.username.data) 
+            flash('Successfully changed username')
+            db.session.commit()
+        if len(current_form.password.data) != 0:
+            user.set_password(current_form.password.data)
+            flash('Successfully changed password')
+            db.session.commit()
+        return redirect(url_for('login'))
+    return render_template('edit.html', user=username, form=current_form)
+
 
 #Baotran
 @myapp_obj.route('/register', methods=['POST', 'GET'])
@@ -140,6 +152,17 @@ def register():
         flash('You have successfully registered!')
         return redirect(url_for('login'))
     return render_template('register.html', form=current_form)
+
+#Baotran
+@myapp_obj.route('/user/<username>/userProfile')
+@login_required
+def profile(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    posts = [
+        {'author': user, 'body': 'Test post #1'},
+        {'author': user, 'body': 'Test post #2'}
+    ]
+    return render_template('profile.html', user=user)
 
 #Baotran
 @myapp_obj.route('/user/<username>/followers')

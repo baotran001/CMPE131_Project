@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+<head>
+    <title>Setting</title>
+</head>>
+
+{% block head %}
+<div>
+  Blog Name
+  <a href="{{ url_for('home', username=current_user.username) }}">Home</a>
+  <a href="{{ url_for('profile', username=current_user.username) }}">Profile</a>
+  <a href="{{ url_for('logout') }}">Logout</a>
+  <hr>   
+</div>
+{% endblock %} 
+{% block mycontent %}
+    
+<center style="padding-top: 100px">
+    <h1>Edit Profile</h1>
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <p style="padding-right: 10px">Profile pic will be here</p>
+    <p style="padding-left: 159px"> {{form.pic()}}</p>
+    <p>{{form.username.label}} <br>
+        {{form.username(size = 45)}} <br>
+        {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+    </p>
+
+    <p>{{form.password.label}} <br> {{form.password(size = 45)}}</p>
+    <p>{{form.confirmPassword.label}} <br> {{form.confirmPassword(size = 45)}}</p>
+    <p>{{form.submit()}}</p>
+</form>
+</center>
+{% endblock %}

@@ -6,17 +6,19 @@
 </head>
 
 <body>
+  {% block head %}
   <div>
     Blog Name
     {% if current_user.is_anonymous %}
     {% else %}
     <a href="{{ url_for('home', username=current_user.username) }}">Home</a>
     <a href="{{ url_for('profile', username=current_user.username) }}">Profile</a>
+    <a href="{{ url_for('edit', username=user.username )}}">Edit Profile</a>
     <a href="{{ url_for('logout') }}">Logout</a>
     {% endif %}
-    <hr>
-    
+    <hr>   
   </div>
+  {% endblock %}  
   {% block mycontent %} {% endblock %}
   {% with messages = get_flashed_messages() %}
   {% if messages %}
