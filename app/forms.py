@@ -60,3 +60,7 @@ class DeleteAccountForm(FlaskForm):
                 raise ValidationError('Please Enter Your Password.')
         else:
             raise ValidationError('The Passwords did not match.')
+
+class SearchBarForm(FlaskForm):
+    search = StringField("Search", validators=[DataRequired()])
+    submit = SubmitField("Submit")

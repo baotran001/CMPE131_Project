@@ -13,8 +13,9 @@
     {% else %}
     <a href="{{ url_for('home', username=current_user.username) }}">Home</a>
     <a href="{{ url_for('profile', username=current_user.username) }}">Profile</a>
-    <a href="{{ url_for('edit', username=user.username )}}">Edit Profile</a>
-    <a href="{{ url_for('deleteAccount', username=user.username )}}">Delete Account</a>
+    <a href="{{ url_for('edit', username=current_user.username )}}">Edit Profile</a>
+    <a href="{{ url_for('search', username=current_user.username)}}">Search</a>
+    <a href="{{ url_for('deleteAccount', username=current_user.username )}}">Delete Account</a>
     <a href="{{ url_for('logout') }}">Logout</a>
     {% endif %}
     <hr>   

@@ -1,6 +1,6 @@
 from app import myapp_obj
 from flask import render_template, redirect, flash
-from app.forms import LoginForm, EmptyForm, HomeForm, RegisterForm, EditForm, DeleteAccountForm
+from app.forms import LoginForm, EmptyForm, HomeForm, RegisterForm, EditForm, DeleteAccountForm, SearchBarForm
 from app.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import current_user
@@ -195,3 +195,24 @@ def deleteAccount(username):
         return redirect(url_for('login'))
 
     return render_template('deleteAccount.html', form=current_form, user=current_user)
+
+#Hieu
+@myapp_obj.route('/user/<username>/search', methods=["POST", 'GET'])
+@login_required
+def search(username):
+    form = SearchBarForm()
+    if form.validate_on_submit():
+        flash(form.search.data)
+        if user is None:
+            flash('User does not exist')
+        else:
+            return redirect(url_for('searchResults', username=form.search.data))
+    return render_template('searchPage.html',form=form, user=username)
+
+#Hieu
+@myapp_obj.route('/user/<username>/searchResults', methods=["POST", 'GET'])
+@login_required
+def searchResults(username):
+    return render_template('searchResults.html', username=username)
+
+    
