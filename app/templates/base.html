@@ -14,6 +14,7 @@
     <a href="{{ url_for('home', username=current_user.username) }}">Home</a>
     <a href="{{ url_for('profile', username=current_user.username) }}">Profile</a>
     <a href="{{ url_for('edit', username=user.username )}}">Edit Profile</a>
+    <a href="{{ url_for('deleteAccount', username=user.username )}}">Delete Account</a>
     <a href="{{ url_for('logout') }}">Logout</a>
     {% endif %}
     <hr>   

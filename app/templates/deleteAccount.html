@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+<head>
+    <title>Delete Account</title>
+</head>>
+
+{% block mycontent %}
+    <h1>Delete Account: {{ user.username }}</h1>
+    <form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+
+    <p>{{ form.password.label }}<br>{{form.password(size = 45)}}</p>
+    <p>{{ form.confirmPassword.label }}<br>{{form.confirmPassword(size = 45)}}</p>
+    <p>{{ form.submit() }}</p>
+  </form>
+{% endblock %}
