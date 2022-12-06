@@ -1,0 +1,9 @@
+Since we are building a messaging application, it is most important that we keep our user's privacy in mind.
+The account information and messages by the user must be protected through a password system. As engineers we
+strive to innovate and improve something about our society. Creating messaging websites like ours will 
+lessen the need for in person interaction. This is useful in light of the recent pandemic but also for the 
+environment in general. This makes people less reliant on cars and other transportation vehicles that will
+pollute the air. With websites like ours becoming more integral to society, society as a whole will 
+reduce their carbon footprint and slow down climate change which is a global threat. Of course the only
+risk of this application would be the security. That's why it is our responsible to keep the user's password
+and messages protected from potential threat. 
