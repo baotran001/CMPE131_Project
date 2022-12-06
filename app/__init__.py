@@ -13,10 +13,14 @@ myapp_obj.config.update(
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 )
 db = SQLAlchemy(myapp_obj)
-
+with myapp_obj.app_context():
+    db.create_all()
 login = LoginManager(myapp_obj)
 
 login.login_view = 'login'
+
+UPLOAD_FOLDER = 'static/images/'
+myapp_obj.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 from app import routes, models
 

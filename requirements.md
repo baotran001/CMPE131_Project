@@ -11,7 +11,7 @@
 8. Follow User (Cathleen)
 9. Search for User (Cathleen)
 10. User Profile (Baotran)
-11. Sending private messages (Baotran)
+11. Sending private messages
 12. Post an image with message
 
 ## Non-functional Requirements

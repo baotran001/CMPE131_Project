@@ -8,9 +8,12 @@ from flask_login import login_required
 from flask_login import login_user
 from flask_login import logout_user
 
+from werkzeug.utils import secure_filename
+import uuid as uuid
+import os
 from app import db
 from flask import url_for
-from flask import request
+from flask import request, make_response
 
 @myapp_obj.route('/private')
 @login_required
@@ -104,12 +107,16 @@ def unfollow(username):
     else:
         return redirect(url_for('base')) # fix url for?
 
-
-#Baotran
 @myapp_obj.route('/user/<username>/home', methods=['POST', 'GET'])
 @login_required
 def home(username):
     current_form = HomeForm()
+    '''
+    posts = [
+        {'author': user, 'body': 'Test post #1'},
+        {'author': user, 'body': 'Test post #2'}
+    ]
+    '''
     user = User.query.filter_by(username=username).first_or_404()
     return render_template('home.html', user=user, form=current_form)
 
@@ -124,14 +131,25 @@ def edit(username):
         if not User.check_password(user,current_form.confirmPassword.data):
             flash('Invalid password!')
             return redirect(url_for('setting', username=username))
-        if len(current_form.username.data) != 0 :
+        #if len(current_form.profile_picture.data)!= 0:
+            #current_form.profile_picture.data.save(os.path.join(myapp_obj.config['UPLOAD_FOLDER'],current_form.profile_picture.data))
+            #user.set_picture(str(uuid.uuid1()) + '_' + secure_filename(current_form.profile_picture.data))
+            #flash('Successfully changed your picture')
+        if len(current_form.username.data) != 0:
             user.set_username(current_form.username.data) 
             flash('Successfully changed username')
-            db.session.commit()
         if len(current_form.password.data) != 0:
             user.set_password(current_form.password.data)
             flash('Successfully changed password')
-            db.session.commit()
+        db.session.commit()
+        if current_form.light.data:
+            res = make_response(redirect(url_for("login")))
+            res.set_cookie("theme","light",max_age=60*60*24*365*10)
+            return res
+        if current_form.dark.data:
+            res = make_response(redirect(url_for("login")))
+            res.set_cookie("theme","dark",max_age=60*60*24*365*10)
+            return res
         return redirect(url_for('login'))
     return render_template('edit.html', user=username, form=current_form)
 
@@ -158,10 +176,6 @@ def register():
 @login_required
 def profile(username):
     user = User.query.filter_by(username=username).first_or_404()
-    posts = [
-        {'author': user, 'body': 'Test post #1'},
-        {'author': user, 'body': 'Test post #2'}
-    ]
     return render_template('profile.html', user=user)
 
 #Baotran
