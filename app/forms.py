@@ -30,17 +30,21 @@ class HomeForm(FlaskForm):
     post = SubmitField('Post')
 
 class EditForm(FlaskForm):
-    pic = FileField('Profile Picture')
+    dark = BooleanField('Check for dark mode')
+    light = BooleanField('light mode')
+    profile_picture = FileField('Profile Picture')
     username = StringField('Username')
     password = PasswordField('New Password')
     confirmPassword = PasswordField('Confirm password', validators=[DataRequired()])
     submit = SubmitField('Save changes')
 
+ 
     #checks if username is available
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user is not None:
             raise ValidationError('Please use a different username.')
+            
 
 
 class DeleteAccountForm(FlaskForm):
