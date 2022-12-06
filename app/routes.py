@@ -1,6 +1,6 @@
 from app import myapp_obj
 from flask import render_template, redirect, flash
-from app.forms import LoginForm, EmptyForm, HomeForm, RegisterForm, EditForm
+from app.forms import LoginForm, EmptyForm, HomeForm, RegisterForm, EditForm, DeleteAccountForm
 from app.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import current_user
@@ -176,3 +176,22 @@ def followers(username):
 def privateMessage(username):
     return render_template('message.html')
 
+
+#Kolby
+@myapp_obj.route('/user/<username>/deleteAccount', methods=['POST', 'GET'])
+@login_required
+def deleteAccount(username):
+    current_form = DeleteAccountForm()
+    if not current_user.is_authenticated:
+        flash('You are not logged in!')
+        return redirect(url_for('register'))
+    if current_form.validate_on_submit():           #Doesn't actually validate. Need to do more work on that.
+        user = User.query.filter_by(username=username).first_or_404()
+        flash('You have deleted your account!', 'success')
+        db.create_all()
+        db.session.delete(user)
+        logout_user()
+        db.session.commit()
+        return redirect(url_for('login'))
+
+    return render_template('deleteAccount.html', form=current_form, user=current_user)
