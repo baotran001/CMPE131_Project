@@ -75,6 +75,7 @@
   - Hieu 
   - Cathleen 
   - Kolby 
-  - Baotran fixed my use case and will continue working on code
+  - Baotran fixed my use case and will work on creating account, editing profile, user profile, and dark/light mode
+  
 - Group project summary 
   Discussed how to redo use cases based on feedback.
