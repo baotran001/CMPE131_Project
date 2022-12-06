@@ -186,12 +186,13 @@ def deleteAccount(username):
         flash('You are not logged in!')
         return redirect(url_for('register'))
 
-    localUser = User.query.filter_by(username=username).first_or_404()
+    local_user = User.query.filter_by(username=username).first_or_404()
     if current_form.validate_on_submit():
-        if User.check_password(localUser, current_form.confirmPassword.data):
+        if User.check_password(local_user, current_form.confirmPassword.data) \
+                and User.check_password(local_user, current_form.password.data):
             flash('You have deleted your account!', 'success')
             db.create_all()
-            db.session.delete(localUser)
+            db.session.delete(local_user)
             logout_user()
             db.session.commit()
             return redirect(url_for('login'))
