@@ -1,17 +1,6 @@
 {% extends "base.html" %}
 
-{% block head %}
-<head>
-    <title>Setting</title>
-</head>
-<div>
-  Blog Name
-  <a href="{{ url_for('home', username=current_user.username) }}">Home</a>
-  <a href="{{ url_for('profile', username=current_user.username) }}">Profile</a>
-  <a href="{{ url_for('logout') }}">Logout</a>
-  <hr>   
-</div>
-{% endblock %} 
+
 {% block mycontent %}
     
 <center style="padding-top: 100px">
