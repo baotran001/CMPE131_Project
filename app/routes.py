@@ -199,15 +199,19 @@ def deleteAccount(username):
     if not current_user.is_authenticated:
         flash('You are not logged in!')
         return redirect(url_for('register'))
-    if current_form.validate_on_submit():           #Doesn't actually validate. Need to do more work on that.
-        user = User.query.filter_by(username=username).first_or_404()
-        flash('You have deleted your account!', 'success')
-        db.create_all()
-        db.session.delete(user)
-        logout_user()
-        db.session.commit()
-        return redirect(url_for('login'))
 
+    local_user = User.query.filter_by(username=username).first_or_404()
+    if current_form.validate_on_submit():
+        if User.check_password(local_user, current_form.confirmPassword.data) \
+                and User.check_password(local_user, current_form.password.data):
+            flash('You have deleted your account!', 'success')
+            db.create_all()
+            db.session.delete(local_user)
+            logout_user()
+            db.session.commit()
+            return redirect(url_for('login'))
+        else:
+            flash('Invalid password!')
     return render_template('deleteAccount.html', form=current_form, user=current_user)
 
 #Hieu
