@@ -202,11 +202,11 @@ def deleteAccount(username):
 def search(username):
     form = SearchBarForm()
     if form.validate_on_submit():
-        flash(form.search.data)
+        user = User.query.filter_by(username=form.search.data).first()
         if user is None:
             flash('User does not exist')
         else:
-            return redirect(url_for('searchResults', username=form.search.data))
+            return redirect(url_for('searchResults', username=username))
     return render_template('searchPage.html',form=form, user=username)
 
 #Hieu
