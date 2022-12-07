@@ -58,7 +58,7 @@
 - Team updates
   - Hieu 
   - Cathleen worked on and will continue working on 'Follow User' and 'Login'.
-  - Kolby 
+  - Kolby brainstormed ideas to replace incorrect non-functional requirement.
   - Baotran uploaded template to git repository and will continue working on functional requirement
 
 - Group project summary 
@@ -74,7 +74,7 @@
 - Team updates
   - Hieu 
   - Cathleen 
-  - Kolby 
+  - Kolby started working on delete account page and functionality.
   - Baotran fixed my use case and will work on creating account, editing profile, user profile, and dark/light mode
   
 - Group project summary 
