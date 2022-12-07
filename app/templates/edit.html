@@ -9,6 +9,8 @@
   <a href="{{ url_for('home', username=current_user.username) }}">Home</a>
   <a href="{{ url_for('profile', username=current_user.username) }}">Profile</a>
   <a href="{{ url_for('logout') }}">Logout</a>
+  <a href="/set/dark">Dark mode</a>
+  <a href="/set/light">light mode</a>
   <hr>   
 </div>
 {% endblock %} 
@@ -22,8 +24,6 @@
     {% endif %}
     <p style="padding-right: 10px">Profile pic will be here</p>
     <p style="padding-left: 159px"> {{form.profile_picture()}}</p>
-    <p>{{form.dark.label}} <br> {{form.dark()}}</p>
-    <p>{{form.light.label}} <br> {{form.light()}}</p>
     <p>{{form.username.label}} <br>
         {{form.username(size = 45)}} <br>
         {% for error in form.username.errors %}

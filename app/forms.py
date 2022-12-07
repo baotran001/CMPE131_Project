@@ -30,12 +30,10 @@ class HomeForm(FlaskForm):
     post = SubmitField('Post')
 
 class EditForm(FlaskForm):
-    dark = BooleanField('Check for dark mode')
-    light = BooleanField('light mode')
     profile_picture = FileField('Profile Picture')
-    username = StringField('Username')
+    username = StringField('New username')
     password = PasswordField('New Password')
-    confirmPassword = PasswordField('Confirm password', validators=[DataRequired()])
+    confirmPassword = PasswordField('Enter password to confirm changes', validators=[DataRequired()])
     submit = SubmitField('Save changes')
 
  

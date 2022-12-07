@@ -1,33 +1,8 @@
 {% extends "base.html" %}
 
-{% block head %}
 <head>
-    Blog Name
-    <a href="{{ url_for('home', username=current_user.username) }}">Home</a>
-    <a href="{{ url_for('profile', username=current_user.username) }}">Profile</a>
-    <a href="{{ url_for('edit', username=user.username )}}">Edit Profile</a>
-    <a href="{{ url_for('logout') }}">Logout</a>
-    <hr>   
-    {% if request.cookies.get('theme') == 'dark' %}
-    <style> 
-      body {background-color: rgb(67, 68, 68);}
-      h1   {color: rgb(136, 136, 158);}
-      p    {color: rgb(205, 201, 201);}
-      div  {color: rgb(205, 201, 201);}
-      a    {color: rgb(205, 201, 201);}
-    </style> 
-    {% elif request.cookies.get('theme') == 'light'%}
-    <style> 
-        body {background-color: rgb(255, 255, 255);}
-        h1   {color: rgb(10, 10, 14);}
-        p    {color: rgb(18, 13, 13);}
-        div  {color: rgb(18, 14, 14);}
-        a    {color: rgb(14, 10, 10);}
-      </style>
-  {% endif %}
     <title>Home Page</title>
 </head>
-{% endblock %}
 
 
 {% block mycontent %}

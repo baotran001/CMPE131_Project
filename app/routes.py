@@ -142,16 +142,20 @@ def edit(username):
             user.set_password(current_form.password.data)
             flash('Successfully changed password')
         db.session.commit()
-        if current_form.light.data:
-            res = make_response(redirect(url_for("login")))
-            res.set_cookie("theme","light",max_age=60*60*24*365*10)
-            return res
-        if current_form.dark.data:
-            res = make_response(redirect(url_for("login")))
-            res.set_cookie("theme","dark",max_age=60*60*24*365*10)
-            return res
         return redirect(url_for('login'))
     return render_template('edit.html', user=username, form=current_form)
+
+@myapp_obj.route("/set")
+@myapp_obj.route("/set/<theme>")
+def set_theme(theme="light"):
+    res = make_response(redirect(request.referrer))
+    if theme == 'dark':
+            res.set_cookie("theme","light",max_age=60*60*24*365*10)
+    if theme == 'light':
+            res.set_cookie("theme","light",max_age=60*60*24*365*10)
+    res.set_cookie("theme", theme)
+    return res
+  
 
 
 #Baotran
