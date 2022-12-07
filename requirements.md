@@ -92,6 +92,8 @@
 	a. When the user tries to follow the intended user, the system displays a message that gives the option to log in, or create a new account.
   2. The intended user's profile is deleted.
   a. When the user tries to follow the intended user and that profile is deleted, the user is unable to follow the intended user and the system displays a message that the user does not exist.
+  3. The user tries to follow themselves.
+  a. When the user tries to follow themselves, the system will redirect them.
 
 4. Search for User (Cathleen)
 - **Pre-condition:**
