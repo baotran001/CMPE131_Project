@@ -73,7 +73,7 @@
 
 - Team updates
   - Hieu Worked on search user function
-  - Cathleen 
+  - Cathleen updated use cases and will continue to work on 'Follow User'.
   - Kolby 
   - Baotran fixed my use case and will work on creating account, editing profile, user profile, and dark/light mode
   
