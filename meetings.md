@@ -56,7 +56,7 @@
   - Baotran Nguyen
 
 - Team updates
-  - Hieu 
+  - Hieu Worked on search user function
   - Cathleen worked on and will continue working on 'Follow User' and 'Login'.
   - Kolby brainstormed ideas to replace incorrect non-functional requirement.
   - Baotran uploaded template to git repository and will continue working on functional requirement
@@ -66,14 +66,14 @@
 
   ### 2022-12-01 at 11:00
 - Who attended the meeting
-  - Hieu
+  - Hieu  
   - Cathleen
   - Kolby
   - Baotran Nguyen
 
 - Team updates
-  - Hieu 
-  - Cathleen 
+  - Hieu Worked on search user function
+  - Cathleen updated use cases and will continue to work on 'Follow User'.
   - Kolby started working on delete account page and functionality.
   - Baotran fixed my use case and will work on creating account, editing profile, user profile, and dark/light mode
   
