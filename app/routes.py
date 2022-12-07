@@ -228,13 +228,7 @@ def search(username):
         if user is None:
             flash('User does not exist')
         else:
-            return redirect(url_for('searchResults', username=username))
+            return render_template('searchResults.html',form=form, username=username)
     return render_template('searchPage.html',form=form, user=username)
-
-#Hieu
-@myapp_obj.route('/user/<username>/searchResults', methods=["POST", 'GET'])
-@login_required
-def searchResults(username):
-    return render_template('searchResults.html', username=username)
 
     
