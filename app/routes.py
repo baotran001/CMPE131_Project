@@ -63,10 +63,9 @@ def login():
 @myapp_obj.route('/user/<username>')
 @login_required
 def user(username):
-
     form = EmptyForm()
     return render_template('user.html', user=user, posts=posts, form=form)
-
+ 
 #Cathleen
 @myapp_obj.route('/follow/<username>', methods=['POST'])
 @login_required
@@ -74,19 +73,21 @@ def follow(username):
     form = EmptyForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=username).first()
+        # if user tries to follow a nonexistent user, send user to home page
         if user is None:
             flash('User {} does not exist!'.format(username))
-            return redirect(url_for('base'))     # fix url for?
+            return redirect(url_for('home'))
+        # if user tries to follow themselves, send user to profile page    
         if user == current_user:
             flash('Unable to follow yourself...')
-            return redirect(url_for('user', username=username))
+            return redirect(url_for('profile', username=username, form=form))
+        # follows intended user and sends user to intended user's profile page
         current_user.follow(user)
         db.session.commit()
-        flash('You are following {}!'.format(username))
-        return redirect(url_for('user', username=username))
+        return redirect(url_for('profile', username=username, form=form))
     else:
-        return redirect(url_for('base')) # fix url for?
-
+        return redirect(url_for('home'))
+ 
 #Cathleen
 @myapp_obj.route('/unfollow/<username>', methods=['POST'])
 @login_required
@@ -94,18 +95,20 @@ def unfollow(username):
     form = EmptyForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=username).first()
+        # if user tries to unfollow a nonexistent user, send user to home page
         if user is None:
-            flash('User {} not found.'.format(username))
-            return redirect(url_for('base')) # fix url for?
+            flash('User {} does not exist!'.format(username))
+            return redirect(url_for('home'))
+        # if user tries to unfollow themselves, send user to profile page
         if user == current_user:
             flash('You cannot unfollow yourself!')
-            return redirect(url_for('user', username=username))
+            return redirect(url_for('profile', username=username, form=form))
+        # unfollows intended user and sends user to intended user's profile page
         current_user.unfollow(user)
         db.session.commit()
-        flash('You are not following {}.'.format(username))
-        return redirect(url_for('user', username=username))
+        return redirect(url_for('profile', username=username, form=form))
     else:
-        return redirect(url_for('base')) # fix url for?
+        return redirect(url_for('home'))
 
 @myapp_obj.route('/user/<username>/home', methods=['POST', 'GET'])
 @login_required
@@ -179,8 +182,9 @@ def register():
 @myapp_obj.route('/user/<username>/userProfile')
 @login_required
 def profile(username):
+    form = EmptyForm()
     user = User.query.filter_by(username=username).first_or_404()
-    return render_template('profile.html', user=user)
+    return render_template('profile.html', user=user, form=form)
 
 #Baotran
 @myapp_obj.route('/user/<username>/followers')

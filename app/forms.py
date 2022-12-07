@@ -44,7 +44,6 @@ class EditForm(FlaskForm):
             raise ValidationError('Please use a different username.')
             
 
-
 class DeleteAccountForm(FlaskForm):
     username = User.username
     password = PasswordField('Password', validators=[DataRequired()])
