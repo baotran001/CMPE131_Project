@@ -2,24 +2,24 @@
 ## Functional Requirements
 
 1. Login (Cathleen)
-2. Logout
-3. Create new account
+2. Logout (Baotran)
+3. Create new account (Baotran)
 4. delete account
-5. User home page (user can see messages of users they follow)
+5. User home page with image(user can see messages of users they follow)
 6. Send message to followers 
-7. View followers (Baotran)
+7. View followers 
 8. Follow User (Cathleen)
 9. Search for User (Cathleen)
 10. User Profile (Baotran)
 11. Sending private messages
-12. Post an image with message
+12. Edit Profile (Baotran)
 
 ## Non-functional Requirements
 
 1. Only Support Google Chrome
 2. Only support Desktop
-3. Light and Dark Theme option
-4. Options for different fonts
+3. Light and Dark Theme option (Baotran)
+4. Secured log in
 
 ## Use Cases
 
