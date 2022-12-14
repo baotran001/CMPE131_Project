@@ -148,6 +148,7 @@ def edit(username):
         return redirect(url_for('login'))
     return render_template('edit.html', user=username, form=current_form)
 
+#Baotran
 @myapp_obj.route("/set")
 @myapp_obj.route("/set/<theme>")
 def set_theme(theme="light"):
@@ -190,9 +191,9 @@ def profile(username):
 @myapp_obj.route('/user/<username>/followers')
 @login_required
 def followers(username):
-    return render_template('followers.html')
+    user = User.query.filter_by(username=username).first_or_404()
+    return render_template('followers.html', user=user)
 
-#Baotran
 @myapp_obj.route('/user/<username>/message')
 @login_required
 def privateMessage(username):

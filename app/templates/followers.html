@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block mycontent %}
+<h2 style="text-align: center;">Followers</h2>
+<ul> 
+{% for follower in user.followers %}
+        <li>{{follower.username}}</a></li>
+{% endfor %}
+</ul>
+</div>
+{% endblock %}
