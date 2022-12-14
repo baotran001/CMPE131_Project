@@ -6,10 +6,6 @@
     <h1>Edit Profile</h1>
 <form action="" method="POST" enctype="multipart/form-data" novalidate>
     {{form.hidden_tag()}}
-    {% if form.profile_picture %}
-    {% endif %}
-    <p style="padding-right: 10px">Profile pic will be here</p>
-    <p style="padding-left: 159px"> {{form.profile_picture()}}</p>
     <p>{{form.username.label}} <br>
         {{form.username(size = 45)}} <br>
         {% for error in form.username.errors %}

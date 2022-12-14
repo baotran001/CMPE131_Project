@@ -50,12 +50,8 @@ def login():
         # login user
         #REMEMBER ME DOES NOT WORK
         login_user(user, remember=current_form.remember_me.data)
-        flash('quick way to debug')
-        flash('another quick way to debug')
+    
         #print(current_form.username.data, current_form.password.data)
-
-        msg = current_form.username.data, current_form.password.data
-        flash(msg)
         return redirect(url_for('home', username=current_form.username.data))
     login_page_message = 'Sign In'
     return render_template('login.html', login_page_message=login_page_message, form=current_form)
@@ -129,7 +125,6 @@ def home(username):
 def edit(username):
     user = User.query.filter_by(username=username).first_or_404()
     current_form = EditForm()
-    flash(current_form.validate_on_submit())
     if current_form.validate_on_submit():
         if not User.check_password(user,current_form.confirmPassword.data):
             flash('Invalid password!')
@@ -185,7 +180,10 @@ def register():
 def profile(username):
     form = EmptyForm()
     user = User.query.filter_by(username=username).first_or_404()
-    return render_template('profile.html', user=user, form=form)
+    num = 0
+    for follower in user.followers:
+        num +=1
+    return render_template('profile.html', user=user, form=form, num=num)
 
 #Baotran
 @myapp_obj.route('/user/<username>/followers')
@@ -233,5 +231,8 @@ def search(username):
         if user is None:
             flash('User does not exist')
         else:
-            return render_template('profile.html',form=form, user=user)
+            num = 0
+            for follower in user.followers:
+                num += 1
+            return render_template('profile.html',form=form, user=user, num=num)
     return render_template('searchPage.html',form=form, user=username)
