@@ -125,7 +125,6 @@ def home(username):
 def edit(username):
     user = User.query.filter_by(username=username).first_or_404()
     current_form = EditForm()
-    flash(current_form.validate_on_submit())
     if current_form.validate_on_submit():
         if not User.check_password(user,current_form.confirmPassword.data):
             flash('Invalid password!')
