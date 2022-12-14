@@ -4,10 +4,12 @@
 <head> 
   {% if request.cookies.get('theme') == 'dark' %}
     <style> 
-      body {background-color: rgb(67, 68, 68);}
+      body {background-color: rgb(45, 47, 47);}
       h1   {color: rgb(136, 136, 158);}
+      h2   {color: rgb(112, 112, 137);}
       p    {color: rgb(205, 201, 201);}
       div  {color: rgb(205, 201, 201);}
+      li   {color: rgb(205, 201, 201);}
       a    {color: rgb(205, 201, 201);}
     </style> 
     {% elif request.cookies.get('theme') == 'light'%}
