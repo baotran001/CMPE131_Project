@@ -232,7 +232,5 @@ def search(username):
         if user is None:
             flash('User does not exist')
         else:
-            return render_template('searchResults.html',form=form, username=username)
+            return render_template('profile.html',form=form, user=user)
     return render_template('searchPage.html',form=form, user=username)
-
-    
