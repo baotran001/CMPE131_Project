@@ -27,7 +27,8 @@
  
 <p>
   <span style="font-size: 20px">post: </span>
-  <a style="text-decoration:none;" href="{{ url_for('followers', username=user.username )}}"><span style="font-size: 20px">follower </span></a>
+  <a style="text-decoration:none; font-size: 20px" href="{{ url_for('followers', username=user.username )}}"><span style="font-size: 20px,">follower: </span></a>
+  <span style="font-size: 20px">{{num}} </span>
 </p>
  
 <hr>
