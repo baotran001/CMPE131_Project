@@ -128,7 +128,7 @@ def edit(username):
     if current_form.validate_on_submit():
         if not User.check_password(user,current_form.confirmPassword.data):
             flash('Invalid password!')
-            return redirect(url_for('setting', username=username))
+            return redirect(url_for('edit', username=username))
         #if len(current_form.profile_picture.data)!= 0:
             #current_form.profile_picture.data.save(os.path.join(myapp_obj.config['UPLOAD_FOLDER'],current_form.profile_picture.data))
             #user.set_picture(str(uuid.uuid1()) + '_' + secure_filename(current_form.profile_picture.data))
